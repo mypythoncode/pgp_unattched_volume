@@ -1,0 +1,39 @@
+[root@ip-10-15-9-47 agborntuibate]# systemctl status pgp_transform.service
+● pgp_transform.service - PGP transform for SFTP
+   Loaded: loaded (/etc/systemd/system/pgp_transform.service; enabled; vendor preset: disabled)
+   Active: active (running) since Mon 2023-02-27 06:16:53 UTC; 6h ago
+ Main PID: 3357 (python3)
+   CGroup: /system.slice/pgp_transform.service
+           └─3357 /usr/bin/python3 /usr/local/lib/pgp_transform/main.py
+
+Feb 27 06:17:00 ip-10-15-9-47.us-west-2.compute.internal python3[3357]: 2023-02-27 06:17:00,033 - [INFO] - Event: {'Records': [{'eventVersion': '2.1', 'eventSource': 'aws:s3', 'awsRegion': 'us-west-2', 'eventTime': '2023-02-24T03:09:11.781Z', 'eventNam...e@fico.com'}, 're
+Feb 27 06:17:00 ip-10-15-9-47.us-west-2.compute.internal python3[3357]: 2023-02-27 06:17:00,033 - [INFO] - bucket_name: charles-test-sftp-buk, filekey: pgp/testing/input/Bate-test.csv.gpg, file_size: 3.7532299757003784e-07
+Feb 27 06:17:00 ip-10-15-9-47.us-west-2.compute.internal python3[3357]: 2023-02-27 06:17:00,033 - [WARNING] - Skip: Invalid S3 file path: pgp/testing/input/Bate-test.csv.gpg
+Feb 27 06:17:00 ip-10-15-9-47.us-west-2.compute.internal python3[3357]: 2023-02-27 06:17:00,042 - [INFO] - Message is processed: 4be9cf47-3e52-410d-9d10-33af9ca2efd1
+Feb 27 06:17:05 ip-10-15-9-47.us-west-2.compute.internal python3[3357]: 2023-02-27 06:17:05,067 - [INFO] - Receive the message: c0ebf566-c2d4-49f1-b279-db267aa83ba7
+Feb 27 06:17:05 ip-10-15-9-47.us-west-2.compute.internal python3[3357]: 2023-02-27 06:17:05,067 - [INFO] - Start process message: c0ebf566-c2d4-49f1-b279-db267aa83ba7
+Feb 27 06:17:05 ip-10-15-9-47.us-west-2.compute.internal python3[3357]: 2023-02-27 06:17:05,067 - [INFO] - Event: {'Records': [{'eventVersion': '2.1', 'eventSource': 'aws:s3', 'awsRegion': 'us-west-2', 'eventTime': '2023-02-23T14:27:32.269Z', 'eventNam...e@fico.com'}, 're
+Feb 27 06:17:05 ip-10-15-9-47.us-west-2.compute.internal python3[3357]: 2023-02-27 06:17:05,068 - [INFO] - bucket_name: charles-test-sftp-buk, filekey: pgp/testing/input/Bate-test.csv.gpg, file_size: 3.7532299757003784e-07
+Feb 27 06:17:05 ip-10-15-9-47.us-west-2.compute.internal python3[3357]: 2023-02-27 06:17:05,068 - [WARNING] - Skip: Invalid S3 file path: pgp/testing/input/Bate-test.csv.gpg
+Feb 27 06:17:05 ip-10-15-9-47.us-west-2.compute.internal python3[3357]: 2023-02-27 06:17:05,076 - [INFO] - Message is processed: c0ebf566-c2d4-49f1-b279-db267aa83ba7
+Hint: Some lines were ellipsized, use -l to show in full.
+
+
+
+****Checking now, most likely the code change that was done is not allowing the pgp service to start***
+
+***You code modification is not allowing the pgp service to start***
+
+
+
+
+after I reverted back the code its working as expected
+
+
+you might want to debug and see what is happening with it after you make the modification
+
+
+
+
+
+
